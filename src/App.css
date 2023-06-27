@@ -50,3 +50,12 @@ background-color:  rgba(211, 125, 44, 0.556);
 padding: .5rem;
 border-radius: 1rem;
 }
+
+span{
+  
+  background-color: brown;
+  padding: .2rem;
+  border-radius: 2rem;
+  height: 30px;
+  color: white;
+}
