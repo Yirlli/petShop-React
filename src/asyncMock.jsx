@@ -5,7 +5,7 @@ const products = [
         nombre: 'Pedigree Adulto 3kg',
         precio: 800,
         categoria: 'Alimento para gatos',
-        img: './purina.jpg',
+        img: '../purina.jpg',
         stock: 15,
         descripcion:'Alimento para gatos sabor a salmón' 
 
@@ -27,6 +27,14 @@ export const getProducts = () =>{
     return new Promise(( resolve) => {
         setTimeout(() => {
             resolve(products)
+        }, 500)
+    })
+}
+
+export const getProductById = (productId) =>{
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve(products.find(prod => prod.id === productId))
         }, 500)
     })
 }

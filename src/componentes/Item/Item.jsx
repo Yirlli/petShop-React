@@ -10,15 +10,16 @@ const Item =({id, nombre, img, precio, stock}) =>{
                 <img src={img} alt={nombre} />
             </picture>
             <section>
+                <p>Id: {id}</p>
                 <p>
                     Precio: ${precio}
                 </p>
                 <p>
-                    Stock disponible: ${stock}
+                    Stock disponible: {stock} unidades
                 </p>
             </section>
             <footer>
-                <button> Ver detalles</button>
+                <button className="btn" type="submit"> Ver detalles</button>
             </footer>
 
         </article>
