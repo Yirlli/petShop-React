@@ -1,23 +1,30 @@
 import { useState, useEffect } from "react"
-import { getProducts } from "../../asyncMock"
+import { products } from "../../utils/products"
+import { customFetch } from "../../utils/customFetch"
 import ItemList from "../ItemList/ItemList"
 
 const ItemListContainer = ({greeting}) =>{
-    const [products, setProducts] = useState([])
+    const [listProducts, setListProducts] = useState([])
+    const[loading, setLoading] = useState(true)
 
     useEffect(() =>{
-        getProducts()
-            .then(response =>{
-                setProducts(response)
-            })
-            .catch(error =>{
-                console.error(error)
+        setLoading(true)
+        customFetch(products)
+            .then(res => {
+                setLoading(false)
+                setListProducts(res)
             })
     }, [])
     return(
         <div className="saludos">
             <h1> {greeting}</h1>
-            <ItemList products={products}/>
+            {!loading
+            ?
+            <ItemList listProducts={listProducts}/>
+            :
+            <p>Cargando...</p>
+            }
+            
 
         </div>
     )

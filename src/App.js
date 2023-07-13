@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       <Navbar/>
-      <ItemListContainer/>
+      <ItemListContainer greeting="Bienvenidos a la petShop"/>
       <ItemCount initial={1} stock={10} onAdd={(quantity) => console.log('Cantidad agregada' , quantity)}/>
       <ItemDetailContainer/>
     </div>

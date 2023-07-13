@@ -1,23 +1,30 @@
 import { useEffect,useState } from "react";
-import {getProductById} from '../../asyncMock'
+import { products} from '../../utils/products'
 import ItemDetail from '../ItemDetail/ItemDetail'
+import { customFetch } from "../../utils/customFetch";
 
 const ItemDetailContainer = () =>{
-    const [product, setProduct] = useState(null)
+    const [listProduct, setListProduct] = useState({})
 
     useEffect(() =>{
-        getProductById('1')
-        .then(response => {
-            setProduct(response)
-        })
-        .catch(error =>{
-            console.error(error)
-        })
+        setLoading(true)
+        customFetch(products)
+            .then(res=> {
+                setLoading(false)
+                setListProduct(res.find(item => item.id === 1))
+            })
+    
     }, [])
 
     return(
         <div className="ItemDetailContainer">
-            <ItemDetail {...product}/>
+            {
+                !loading ?
+            
+            <ItemDetail listProduct={listProduct}/>
+            :
+            <p>Cargando...</p>
+        }
         </div>
     )
 }
