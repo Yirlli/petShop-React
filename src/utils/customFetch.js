@@ -1,4 +1,4 @@
-import { products } from "./products"
+import products from "./products.json"
 
 export const customFetch = (products) =>{
      return new Promise(( resolve) => {
@@ -8,10 +8,17 @@ export const customFetch = (products) =>{
         })
     }
     
-export const getProductById = (productId) =>{
-    return new Promise((resolve) => {
+export const ProductById = (Id) =>{
+    return new Promise((resolve,reject) => {
         setTimeout(() => {
-            resolve(products.find(prod => prod.id === productId))
-            }, 500)
+            const item= products.find(prod => prod.id === Id)
+           if(item){
+            resolve(item)
+           }else{
+            reject({
+                error:"No se encontro el producto"
+             })
+            }
+            }, 2000)
         })
     }

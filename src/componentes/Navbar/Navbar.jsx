@@ -1,5 +1,6 @@
 import CartWidget from "../CartWidget/CartWidget"
 import logo from "../../assets/petsh.png"
+import { Link } from "react-router-dom"
 
 
 const Navbar = () => {
@@ -10,10 +11,12 @@ const Navbar = () => {
             
                 <div class="flex ">
                     <ul class="flex gap-x-4 mt-14">
+                        <li ><Link to="/">Inicio</Link></li>
 
-                        <li ><a href="#">Juguetes</a></li>
-                        <li><a href="#">Ropa</a></li>
-                        <li><a href="#">Camas</a></li>
+                        <li ><Link to="/productos">Productos</Link></li>
+                        <li><Link to="/productos/jueguetes funcionales">Juguetes Funcionales</Link></li>
+                        <li><Link to="/productos/alimentos para perros">Alimentos para perros</Link></li>
+                        <li><Link to="/alimentos para gatos">Alimentos para gatos</Link></li>
                         
                     </ul>
         

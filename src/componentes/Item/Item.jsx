@@ -1,26 +1,29 @@
-const Item =({id, nombre, img, precio, stock}) =>{
+import { Link } from "react-router-dom"
+
+const Item =({product}) =>{
     return(
         <article className="CardItem">
             <header className="Header">
                 <h2 className="ItemHeader">
-                    {nombre}
+                    {product.nombre}
                 </h2>
             </header>
             <picture>
-                <img src={img} alt={nombre} />
+                <img src={product.img} alt={product.nombre} />
             </picture>
             <section>
-                <p>Id: {id}</p>
+                <p>Id: {product.id}</p>
                 <p>
-                    Precio: ${precio}
+                    Precio: ${product.precio}
                 </p>
                 <p>
-                    Stock disponible: {stock} unidades
+                    Stock disponible: {product.stock} unidades
                 </p>
             </section>
             <footer>
-                <button className="btn" type="submit"> Ver detalles</button>
+                <Link className="btn" to={`/item/${product.id}`} > Ver detalles</Link>
             </footer>
+           
 
         </article>
     )

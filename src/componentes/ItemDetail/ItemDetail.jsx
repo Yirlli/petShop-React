@@ -1,28 +1,28 @@
 import ItemCount from '../ItemCount/ItemCount'
-const ItemDetail = ({id, nombre, img, categoria, descripcion, precio, stock}) =>{
+const ItemDetail = ({ item}) =>{
     return(
         <article className='CardItem'>
             <header className='Header'>
                 <h2 className='ItemHeader'>
-                    {nombre}
+                    {item.nombre}
                 </h2>
             </header>
             <picture>
-                <img src={img} alt={nombre}/>
+                <img src={item.img} alt={item.nombre}/>
             </picture>
             <section>
                 <p>
-                    Categoria: {categoria}
+                    Categoria: {item.categoria}
                 </p>
                 <p>
-                    Descripcion: {descripcion}
+                    Descripcion: {item.descripcion}
                 </p>
                 <p>
-                    Precio: ${precio}
+                    Precio: ${item.precio}
                 </p>
             </section>
             <footer>
-                <ItemCount initial={1}stock={stock} onAdd={(quantity) => console.log('Cantidad agregadda')}/>
+                <ItemCount initial={1}stock={item.stock} onAdd={(quantity) => console.log('Cantidad agregadda')}/>
             </footer>
         </article>
     )
