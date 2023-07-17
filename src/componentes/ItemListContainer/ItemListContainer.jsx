@@ -1,24 +1,27 @@
 
 import { useState, useEffect } from "react"
 import ItemList from "../ItemList/ItemList"
-import { customFetch } from "../../utils/customFetch"
+import  {productFetch } from "../../utils/data"
 import { useParams } from "react-router-dom"
+import productsData from "../../utils/products.json"; 
 
 
-const ItemListContainer = ({greeting}) =>{
-    const [listProducts, setListProducts] = useState([])
+export const ItemListContainer = ({greeting}) =>{
+    const [productos, setProductos] = useState([])
     const[loading, setLoading] = useState(true)
+    const[nombre, setNombre] = useState("Productos");
     const categoria = useParams().categoria;
 
     useEffect(() =>{
         setLoading(true)
-        customFetch()
+        productFetch(productsData)
             .then(res => {
                 setLoading(false)
                 if(categoria){
-                    setListProducts(res.filter((prod => prod.categoria === categoria)))
+                    setProductos(res.filter((prod => prod.categoria === categoria)))
+                    setNombre(categoria);
                 }else{
-                    setListProducts(res)
+                    setProductos(res)
                 }
               
             })
@@ -28,7 +31,7 @@ const ItemListContainer = ({greeting}) =>{
             <h1> {greeting}</h1>
             {!loading
             ?
-            <ItemList listProducts={listProducts}/>
+            <ItemList productos={productos} nombre={nombre}/>
             :
             <p>Cargando...</p>
             }
@@ -38,4 +41,3 @@ const ItemListContainer = ({greeting}) =>{
     )
 }
 
-export {ItemListContainer}

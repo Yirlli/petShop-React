@@ -33,12 +33,6 @@ li{
     transform: rotate(360deg);
   }
 }
-.saludos{
-  background-color: rgb(198, 110, 28);
-  padding: 2rem;
-  font-size: 20px;
-  font-weight: bold;
-}
 
 .menu{
   padding: 1rem;
@@ -58,4 +52,58 @@ span{
   border-radius: 2rem;
   height: 30px;
   color: white;
+}
+.Container{
+  display: flex;
+}
+.CardItem{
+  background-color: rgb(247, 247, 247);
+  Display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 30vw;
+  gap:4rem;
+  margin-bottom: 4rem;
+  border-radius: 3rem;
+}
+picture img{
+  width: 15vw;
+  border-radius: 3rem;
+  align-self: center;
+}
+.Header{
+  background-color: antiquewhite;
+}
+.ItemHeader{
+  font-size: 30px;
+}
+
+.btn{
+  padding: 2rem;
+  background-color: brown;
+  border-radius: 3rem;
+  
+}
+
+.saludos{
+  display: flex;
+  flex-direction: column;
+}
+
+.saludos h1{
+  padding: 5rem;
+  font-size: 35px;
+  background-color: rgb(198, 110, 28);
+  font-weight: bold;
+}
+
+.ListGroup h2{
+  font-size: 28px;
+  font-weight: bold;
+  margin-top: 3rem;
+}
+
+.prodContainer{
+  display: flex;
 }

@@ -1,6 +1,6 @@
 import { useEffect,useState } from "react";
 import ItemDetail from '../ItemDetail/ItemDetail'
-import { ProductById } from "../../utils/customFetch";
+import { ProductById } from "../../utils/data";
 import { useParams } from "react-router-dom";
 
 const ItemDetailContainer = () =>{

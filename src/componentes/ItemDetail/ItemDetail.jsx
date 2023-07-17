@@ -1,7 +1,7 @@
 import ItemCount from '../ItemCount/ItemCount'
 const ItemDetail = ({ item}) =>{
     return(
-        <article className='CardItem'>
+        <article className='Card'>
             <header className='Header'>
                 <h2 className='ItemHeader'>
                     {item.nombre}
