@@ -2,9 +2,9 @@ import ItemCount from '../ItemCount/ItemCount'
 
 const ItemDetail = ({item}) =>{
     return(
-        <article className='Card'>
+        <article className='Card ' >
             <header className='Header'>
-                <h2 className='ItemHeader'>
+                <h2 className='ItemHeader mt-4'>
                     {item.nombre}
                 </h2>
             </header>
@@ -13,13 +13,14 @@ const ItemDetail = ({item}) =>{
             </picture>
             <section>
                 <p>
-                    Categoria: {item.categoria}
+                    <b>Categoria: </b>{item.categoria}
+                </p>
+                
+                <p>
+                    <b>Descripcion: </b>{item.descripcion}
                 </p>
                 <p>
-                    Descripcion: {item.descripcion}
-                </p>
-                <p>
-                    Precio: ${item.precio}
+                   <b> Precio:</b> ${item.precio}
                 </p>
             </section>
             <footer>

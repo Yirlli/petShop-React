@@ -19,7 +19,7 @@ const ItemDetailContainer = () =>{
     }, [])
 
     return(
-        <div className="ItemDetailContainer">
+        <div className="ItemDetailContainer container mx-auto">
             {
                 !loading ?
             

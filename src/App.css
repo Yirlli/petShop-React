@@ -72,9 +72,8 @@ picture img{
   border-radius: 3rem;
   align-self: center;
 }
-.Header{
-  background-color: antiquewhite;
-}
+
+
 .ItemHeader{
   font-size: 30px;
 }
@@ -107,3 +106,44 @@ picture img{
 .prodContainer{
   display: flex;
 }
+
+.ItemDetailContainer{
+  justify-content: center;
+  background-color: rgb(198, 110, 28);
+  display: flex;
+}
+
+.Card{
+  
+  background-color: rgb(247, 247, 247);
+  Display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 30vw;
+  gap:4rem;
+  margin-bottom: 4rem;
+  border-radius: 3rem;
+  margin-top: 4rem;
+}
+
+.Counter{display: flex;
+flex-direction: column;}
+
+.Controls{
+  margin-bottom: 2rem;
+  display: flex;
+}
+.Controls .Button{
+  width: 5rem;
+  margin-right: 1rem;
+  margin-left: 1rem;
+}
+.Button{
+  background-color: brown ;
+  padding:.5rem;
+  border-radius: 1rem;
+  width: 7rem;
+  margin-bottom: 1rem;
+}
+
