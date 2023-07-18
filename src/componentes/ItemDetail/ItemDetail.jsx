@@ -1,5 +1,6 @@
 import ItemCount from '../ItemCount/ItemCount'
-const ItemDetail = ({ item}) =>{
+
+const ItemDetail = ({item}) =>{
     return(
         <article className='Card'>
             <header className='Header'>
@@ -22,7 +23,7 @@ const ItemDetail = ({ item}) =>{
                 </p>
             </section>
             <footer>
-                <ItemCount initial={1}stock={item.stock} onAdd={(quantity) => console.log('Cantidad agregadda')}/>
+                <ItemCount initial={1}stock={item.stock} onAdd={(quantity) => console.log('Cantidad agregada')}/>
             </footer>
         </article>
     )

@@ -4,7 +4,7 @@ import { ProductById } from "../../utils/data";
 import { useParams } from "react-router-dom";
 
 const ItemDetailContainer = () =>{
-    const [item, setItem] = useState({})
+    const [item, setItem] = useState(null)
     const[loading, setLoading] = useState(true)
     const id = useParams().id;
 
@@ -13,7 +13,7 @@ const ItemDetailContainer = () =>{
         ProductById(Number(id))
             .then(res=> {
                 setLoading(false)
-                setItem(res.find(item => item.id === 1))
+                setItem(res)
             })
     
     }, [])
@@ -23,10 +23,10 @@ const ItemDetailContainer = () =>{
             {
                 !loading ?
             
-            <ItemDetail item={item}/>
-            :
-            <p>Cargando...</p>
-        }
+                item && <ItemDetail item={item}/>
+                :
+                <p>Cargando...</p>
+            }
         </div>
     )
 }

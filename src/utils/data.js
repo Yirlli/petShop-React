@@ -8,10 +8,10 @@ import productsData from "./products.json"
         })
     };
 
- export const ProductById = (Id) =>{
+ export const ProductById = (id) =>{
     return new Promise((resolve,reject) => {
         setTimeout(() => {
-            const item= productsData.find(prod => prod.id === Id)
+            const item= productsData.find((prod) => prod.id === id)
            if(item){
             resolve(item)
            }else{

@@ -14,7 +14,7 @@ export const ItemListContainer = ({greeting}) =>{
 
     useEffect(() =>{
         setLoading(true)
-        productFetch(productsData)
+        productFetch()
             .then(res => {
                 setLoading(false)
                 if(categoria){

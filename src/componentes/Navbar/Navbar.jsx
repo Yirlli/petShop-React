@@ -13,10 +13,9 @@ const Navbar = () => {
                     <ul class="flex gap-x-4 mt-14">
                         <li ><Link to="/">Inicio</Link></li>
 
-                        <li ><Link to="/productos">Productos</Link></li>
-                        <li><Link to="/productos/jueguetes">Juguetes Funcionales</Link></li>
-                        <li><Link to="/productos/alimentos para perros">Alimentos para perros</Link></li>
-                        <li><Link to="/productos/gatos">Alimentos para gatos</Link></li>
+                        <li><Link to="/productos/Juguetes">Juguetes</Link></li>
+                        <li><Link to="productos/Perros">Alimentos para perros</Link></li>
+                        <li><Link to="productos/Gatos">Alimentos para gatos</Link></li>
                         
                     </ul>
         
