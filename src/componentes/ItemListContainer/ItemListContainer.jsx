@@ -25,7 +25,7 @@ export const ItemListContainer = ({greeting}) =>{
                 }
               
             })
-    }, [])
+    }, [categoria])
     return(
         <div className="saludos">
             <h1> {greeting}</h1>
