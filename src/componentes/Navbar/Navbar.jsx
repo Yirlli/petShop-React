@@ -16,11 +16,14 @@ const Navbar = () => {
                         <li><Link to="/productos/Juguetes">Juguetes</Link></li>
                         <li><Link to="productos/Perros">Alimentos para perros</Link></li>
                         <li><Link to="productos/Gatos">Alimentos para gatos</Link></li>
+                        <li><CartWidget/></li>
+                        
+
                         
                     </ul>
         
                 </div>
-                <CartWidget/>
+                
 
             </div>
             
