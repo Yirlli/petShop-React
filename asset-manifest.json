@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/petshop-react%20/static/css/main.1a2329d1.css",
+    "main.js": "/petshop-react%20/static/js/main.660532f2.js",
+    "static/media/petsh.png": "/petshop-react%20/static/media/petsh.e732a9c20f94640af9ef.png",
+    "index.html": "/petshop-react%20/index.html",
+    "main.1a2329d1.css.map": "/petshop-react%20/static/css/main.1a2329d1.css.map",
+    "main.660532f2.js.map": "/petshop-react%20/static/js/main.660532f2.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1a2329d1.css",
+    "static/js/main.660532f2.js"
+  ]
+}
