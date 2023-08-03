@@ -4,7 +4,7 @@ export const CartContext = createContext();
 
 const shoppingInicial = JSON.parse(localStorage.getItem("shoppingCart")) || [];
 export const ShoppingProvider = ({children}) =>{
-    const [ shoppingCart, setShoppingCart] = useState([shoppingInicial]);
+    const [ shoppingCart, setShoppingCart] = useState(shoppingInicial);
 
     
   const handleAgregarCarrito= (item, quantity) => {
@@ -26,7 +26,7 @@ const quantityShopping=()=>{
 }
 
 const precioTotal = () => {
-  return shoppingCart.reduce((acc, item) => acc + item.precio * item.quantity, 0)
+  return shoppingCart.reduce((acc, item) => acc +  item.precio * item.quantity, 0)
 }
 
 const vaciarCarrito = () =>{

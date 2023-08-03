@@ -1,12 +1,12 @@
 import { useEffect,useState } from "react";
 import ItemDetail from '../ItemDetail/ItemDetail'
-import {doc, getDoc} from "firebase/firestore"
+import {doc, getDoc} from "@firebase/firestore"
 import { useParams } from "react-router-dom";
 import { db } from "../../firebase/config";
 
 const ItemDetailContainer = () =>{
     const [item, setItem] = useState(null)
-    const[loading, setLoading] = useState(true)
+    const[loading, setLoading] = useState(false)
     const id = useParams().id;
 
     useEffect(() =>{
@@ -16,20 +16,21 @@ const ItemDetailContainer = () =>{
         getDoc(docRef)
             .then((res)=>{
                 setItem(
-                {...res.data(), ud: res.id}
+                {...res.data(), id: res.id}
                 );
+                setLoading(false)
             })
         
     }, [id])
 
     return(
         <div className="ItemDetailContainer container mx-auto">
-            {/*
+            {
                 !loading ?
-            */
+            
                 item && <ItemDetail item={item}/>
-               /* :
-                <p>Cargando...</p>*/
+                :
+                <p>Cargando...</p>
             }
         </div>
     )

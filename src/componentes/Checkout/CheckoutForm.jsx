@@ -1,5 +1,5 @@
-import { useContext, useState} from "react";
-import{ addDoc, collection} from 'firebase/firestore'
+import { useContext, useState, useEffect} from "react";
+import{ addDoc, collection} from "@firebase/firestore"
 import { CartContext } from "../../context/CartContext";
 import{db} from '../../firebase/config'
 
@@ -9,56 +9,66 @@ const CheckoutForm = () => {
     const[loading, setLoading] = useState(false)
     const[pedidoId, setPedidoId] = useState("")
     const{register, handleSubmit}= useForm();
-    setLoading(false)
+
 
 
     const{shoppingCart, precioTotal, vaciarCarrito} = useContext(CartContext);
 
     const comprar = (data) =>{
+        setLoading(true)
         const pedido = {
             cliente: data,
             productos: shoppingCart,
             total: precioTotal()
         }
 
-        const pedidosRef = collection(db, "pedidos");
+       const pedidosRef = collection(db, "pedidos");
         addDoc(pedidosRef, pedido)
             .then((doc) => {
+                setLoading(false)
                 setPedidoId(doc.id);
                 vaciarCarrito();
+                
             })
+             .finally(()=>{
+                setLoading(false)
+            });
     }
 
+    if(loading){
+        return <p>En breve confirmaremos la compra realizada...</p>
+        
+    }
     if(pedidoId){
-     
         return(
-            <div>
+            <div className="orden-compra">
             
-
-                    <p>Generando orden de compra... {pedidoId}</p>
-            
-                
-                
-                
+                <h2>Su compra se ha generado con éxito</h2>
+                <p>Orden de compra n°: {pedidoId}</p>
+      
             </div>
         )
     }
 
     return(
-        <div>
+        <div className="container-form">
             <h1>Finalizar Compra</h1>
-            <form onSubmit={handleSubmit(comprar)} className="Form">
-                <label> Nombre
+            <form onSubmit={handleSubmit(comprar)} className="form-orden">
+                <div className="contenedor-interno">
+                        <label> Nombre</label>
                     <input placeholder="ingrese su nombre" type="text"{...register("nombre")}/>
-                </label>
-                <label> Telefono
+                
+                    <label> Telefono</label>
                     <input placeholder="ingrese su telefono" type="text" {...register("telefono")}/>
-                </label>
-                <label> Email
+                
+                    <label> Email</label>
                     <input placeholder="ingrese su email" type="email" {...register("email")}/>
-                </label>
-                <div>
-                    <button type="submit"> Crear Orden</button>
+
+                </div>
+                
+                
+                <div className="botones">
+                    <button type="submit" className="orden"> Crear Orden</button>
                 </div>
             </form>
         </div>
